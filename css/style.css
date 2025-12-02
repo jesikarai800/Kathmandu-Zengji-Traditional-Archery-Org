@@ -1,0 +1,123 @@
+body {
+    font-family: Bricolage Grotesque, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1em;
+}
+
+p{
+    font-weight: 400;
+}
+
+h1 {
+    letter-spacing: -2px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    font-family: Fjalla One, sans-serif;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+.nav-text{
+    color: white;
+    font-family: Bricolage Grotesque, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+.font{
+    font-family: Bricolage Grotesque, sans-serif;
+}
+
+.contact-button {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    /* border-radius: 8px; */
+    transition: color 0.6s ease;
+    color: black;
+}
+.contact-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1000%;       /* enough to cover diagonally */
+    height: 1000%;
+    background: #fa3714;
+    transform: rotate(45deg) translate(-100%, 100%); /* rotate first, then move */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.contact-button:hover::before {
+    transform: rotate(0deg) translate(0, 0); 
+}
+
+.contact-button p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    transition: color 0.5s ease;
+}
+
+.contact-button:hover p {
+    color: white;
+}
+
+
+/* SHADOW */
+.shadow-top-left{
+  position: relative;
+}
+
+.shadow-top-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* height of shadow */
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,6), rgba(0, 0, 0, 0 ));
+}
+
+
+/* Container with shadow */
+.shadow-bottom-inward {
+  position: relative; /* needed for pseudo-element */
+}
+
+/* Bottom inward shadow */
+.shadow-bottom-inward::after {
+  content: '';
+  position: absolute;
+  bottom: 0;       /* attach to bottom */
+  left: 0;
+  width: 100%;
+  height: 120px;    /* height of shadow */
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,6), rgba(0,0,0,0)); /* fade upward */
+  z-index: 0;
+}
+
+
+
+
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
