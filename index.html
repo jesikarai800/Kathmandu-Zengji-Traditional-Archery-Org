@@ -141,6 +141,7 @@
     </div>
 </section>
 
+<!-- Carousel -->
 <section class="py-32 bg-white">
     <div class="container mx-auto">
         <div class="grid grid-cols-[40%,_60%]">
@@ -151,9 +152,26 @@
                 </div>
                 <h1 class="mt-10 text-[48px]">Not Just Archery. A Way to Aim.</h1>
                 <p class="mt-4 text-[18px] text-[#535353]">While we train champions, our first goal is to build a supportive space where everyone feels welcome — from curious beginners to seasoned archers.</p>
+                                
+                <div class="mt-52 flex gap-3">
+                    <!-- Left arrow -->
+                    <button id="scroll-left" class="bg-black p-4 hover:bg-">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Right arrow -->
+                    <button id="scroll-right" class="bg-black p-4 hover:bg-">
+                        <svg xmlns="http://www.w3.org/1000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="sr-only">Next Slide</span>
+                    </button>
+                </div>
             </div>
 
-            <div class="overflow-x-auto scrollbar-hide mt-12 pt-3 flex gap-4 flex-nowrap">
+            <div id="arrow-container" class="overflow-x-auto scrollbar-hide mt-12 pt-3 flex gap-4 flex-nowrap">
 
                 <div class="bg-[#535353] relative w-[380px] h-[500px] flex-shrink-0">
                     <img src="images/slideshow1.jpg" alt="" class="w-full h-full object-cover">
@@ -267,10 +285,33 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+
+<section class="">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-[40%,_60%]">
+            <div class="bg-[#fa3714]">
+                <img src="images/profile1.webp" alt="" class="h-12 w-12 rounded-full">    
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+const container = document.getElementById("arrow-container");
+const scrollAmount = 384;
+
+document.getElementById("scroll-left").addEventListener("click", () => {
+  container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+document.getElementById("scroll-right").addEventListener("click", () => {
+  container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+</script>
 
 </body>
 </html>
